@@ -19,3 +19,6 @@ int main(int argc, char **argv)
     std::cout << std::endl;
     return (0);
 }
+
+// static_cast<char> es más seguro que castear con char.
+//Sin el casteo, debe imprimir el int porque toupper devuelve un int. Must check
