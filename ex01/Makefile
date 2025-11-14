@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bvarea-k <bvarea-k@student.42malaga.c      +#+  +:+       +#+         #
+#    By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/12 09:56:36 by bvarea-k          #+#    #+#              #
-#    Updated: 2025/11/12 09:56:38 by bvarea-k         ###   ########.fr        #
+#    Updated: 2025/11/14 13:33:00 by bvarea-k         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CNAMES = phonebook
+CNAMES = main PhoneBook Contact
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
@@ -19,7 +19,7 @@ OBJ = obj/
 CFILES = $(addsuffix .cpp, $(CNAMES))
 OFILES = $(addprefix $(OBJ), $(addsuffix .o, $(CNAMES)))
 
-NAME = phonebook
+NAME = PhoneBook
 
 all: $(NAME)
 
