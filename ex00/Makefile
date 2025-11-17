@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-CNAMES = Megaphone
+CNAMES = megaphone
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
@@ -19,7 +19,7 @@ OBJ = obj/
 CFILES = $(addsuffix .cpp, $(CNAMES))
 OFILES = $(addprefix $(OBJ), $(addsuffix .o, $(CNAMES)))
 
-NAME = Megaphone
+NAME = megaphone
 
 all: $(NAME)
 

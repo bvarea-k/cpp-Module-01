@@ -6,13 +6,13 @@
 /*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 12:01:52 by bvarea-k          #+#    #+#             */
-/*   Updated: 2025/11/14 16:26:00 by bvarea-k         ###   ########.fr       */
+/*   Updated: 2025/11/17 11:41:55 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-PhoneBook::PhoneBook() {};
+PhoneBook::PhoneBook() : nextIndex(0), count(0) {};
 
 void PhoneBook::printContact(int index) const {
     if (index < 0 || index >= count)
@@ -100,7 +100,6 @@ void PhoneBook::searchContacts() {
 		std::cout << "Invalid index.\n";
 		return;
 	}
-
 	if (index < 0 || index >= count) {
 		std::cout << "Index out of range.\n";
 		return;
