@@ -6,7 +6,7 @@
 /*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 12:42:03 by bvarea-k          #+#    #+#             */
-/*   Updated: 2025/11/14 15:52:08 by bvarea-k         ###   ########.fr       */
+/*   Updated: 2025/11/17 16:40:59 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,3 +27,7 @@ std::string Contact::getLastName(void) const { return lastName; }
 std::string Contact::getNickName(void) const { return nickName; }
 std::string Contact::getPhoneNum(void) const { return phoneNumber; }
 std::string Contact::getSecret(void) const { return darkestSecret; }
+
+
+//Setter: función para asignar o cambiar valor de atributo privado.
+//Getter: función para obtener valor de un atributo privado.
