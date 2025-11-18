@@ -6,13 +6,40 @@
 /*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 12:01:52 by bvarea-k          #+#    #+#             */
-/*   Updated: 2025/11/18 12:52:15 by bvarea-k         ###   ########.fr       */
+/*   Updated: 2025/11/18 17:05:13 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
 PhoneBook::PhoneBook() : nextIndex(0), count(0) {};
+
+int is_ascii(char c)
+{
+	return (c >= 32 && c <= 126);
+}
+
+int is_ascii_string(const std::string &s)
+{
+	for (size_t i = 0; i < s.size(); i++)
+	{
+		if (!is_ascii(s[i]))
+ 			return (0);
+	}
+	return (1);
+}
+
+
+int is_digit_string(const std::string &s)
+{
+	for (size_t i = 0; i < s.size(); i++)
+	{
+		if (!isdigit(s[i]))
+ 			return (0);
+	}
+	return (1);
+}
+
 
 void PhoneBook::printContact(int index) const {
 	if (index < 0 || index >= count)
@@ -33,23 +60,73 @@ void	PhoneBook::addContact()
 	Contact	&c = contacts[nextIndex];	//Declaro la variable c y la igualo a contacts[nextIndex]. c es tipo Contact y va referenciada.
 
 	std::cout << "Enter First Name: ";
-	std::getline(std::cin, input);
+	while (true)
+	{
+		std::getline(std::cin, input);
+		if (!is_ascii_string(input)){
+			std::cout << "Error: only ASCII characters are allowed.";
+			std::cout << std::endl;
+			std::cout << "Enter First Name: ";
+		continue ;
+		}
+		break ;
+	}
 	c.setFirstName(input);
 
 	std::cout << "Enter Last Name: ";
 	std::getline(std::cin, input);
+	while (true)
+	{
+		if (!is_ascii_string(input)){
+			std::cout << "Error: only ASCII characters are allowed.";
+			std::cout << std::endl;
+			std::cout << "Enter Last Name: ";
+		continue ;
+		}
+		break ;
+	}
 	c.setLastName(input);
 
 	std::cout << "Enter Nickname: ";
 	std::getline(std::cin, input);
+	while (true)
+	{
+		if (!is_ascii_string(input)){
+			std::cout << "Error: only ASCII characters are allowed.";
+			std::cout << std::endl;
+			std::cout << "Enter Nickname: ";
+		continue ;
+		}
+		break ;
+	}
 	c.setNickName(input);
 
 	std::cout << "Enter Phone Number: ";
-	std::getline(std::cin, input);
+	while (true)
+	{
+		std::getline(std::cin, input);
+		if (!is_digit_string(input)){
+			std::cout << "Error: only numbers are allowed.";
+			std::cout << std::endl;
+			std::cout << "Enter Phone Number: ";
+			continue ;
+		}
+		break ;
+	}
 	c.setPhoneNum(input);
 
 	std::cout << "Enter Darkest Secret: ";
 	std::getline(std::cin, input);
+	while (true)
+	{
+		if (!is_ascii_string(input)){
+			std::cout << "Error: only ASCII characters are allowed.";
+			std::cout << std::endl;
+			std::cout << "Enter Darkest Secret: ";
+		continue ;
+		}
+		break ;
+	}
 	c.setSecret(input);
 
 	nextIndex = (nextIndex + 1) % 8;
