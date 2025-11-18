@@ -6,7 +6,7 @@
 /*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 12:01:52 by bvarea-k          #+#    #+#             */
-/*   Updated: 2025/11/17 17:10:39 by bvarea-k         ###   ########.fr       */
+/*   Updated: 2025/11/18 12:52:15 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,8 @@ void	PhoneBook::addContact()
 	if (count < 8)
 		count++;
 
-	std::cout << "Contact added successfully!\n";
+	std::cout << "Contact added successfully!";
+	std::cout << std::endl;
 }
 
 void PhoneBook::searchContacts()
@@ -69,8 +70,9 @@ void PhoneBook::searchContacts()
 	std::cout << std::setw(10) << "Index" << "|"		//Creo una tabla preciosa
 			<< std::setw(10) << "First Name" << "|"
 			<< std::setw(10) << "Last Name" << "|"
-			<< std::setw(10) << "Nickname" << "\n";
-
+			<< std::setw(10) << "Nickname";
+			std::cout << std::endl;
+			
 	for (int i = 0; i < count; i++) {
 		std::cout << std::setw(10) << i << "|";			//Reservame 10 espacios y escribe i(el número)
 
@@ -78,16 +80,17 @@ void PhoneBook::searchContacts()
 		std::string ln = contacts[i].getLastName();
 		std::string nn = contacts[i].getNickName();
 
-		if (fn.length() > 10)							//Si fn mide más de 10
+		if (fn.size() > 10)							//Si fn mide más de 10
 			fn = fn.substr(0, 9) + ".";					//crea una copia de 9 caracteres de fn y añade un punto
-		if (ln.length() > 10)
+		if (ln.size() > 10)
 			ln = ln.substr(0, 9) + ".";
-		if (nn.length() > 10)
+		if (nn.size() > 10)
 			nn = nn.substr(0, 9) + ".";
 
 		std::cout << std::setw(10) << fn << "|"
 					<< std::setw(10) << ln << "|"
-					<< std::setw(10) << nn << "\n";
+					<< std::setw(10) << nn;
+		std::cout << std::endl;
 	}
 
 	std::string input;									//Creo la variable input
@@ -95,7 +98,7 @@ void PhoneBook::searchContacts()
 	std::cout << "Enter index of contact to display: ";
 	std::getline(std::cin, input);
 
-	std::stringstream ss(input);						//creo 1 stringstrea, para tratar un string como si fuera un flujo de entrada/salida
+	std::stringstream ss(input);						//creo 1 stringstream, para tratar un string como si fuera un flujo de entrada/salida
 	//permite leer de un string como si fuera str::cin, o sea puedo usar >> para sacar valores del string
 	ss >> index;
 

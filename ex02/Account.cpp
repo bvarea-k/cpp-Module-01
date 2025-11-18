@@ -1,35 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Account.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/14 12:37:57 by bvarea-k          #+#    #+#             */
-/*   Updated: 2025/11/18 12:46:31 by bvarea-k         ###   ########.fr       */
+/*   Created: 2025/11/18 09:22:28 by bvarea-k          #+#    #+#             */
+/*   Updated: 2025/11/18 10:15:57 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-#define PHONEBOOK_HPP
+#include "Account.hpp"
 
-#include "Contact.hpp"
-#include <iostream>
-#include <iomanip>
-#include <sstream>
+Account::Account() ;
 
-class PhoneBook {
-private:
-	Contact	contacts[8];
-	int		nextIndex; //index where next contact is added
-	int		count; //num of added contacts
 
-public:
- 	PhoneBook();
-
-	void	addContact();
-	void	searchContacts();
-	void	printContact(int index) const;
-};
-
-#endif
