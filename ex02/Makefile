@@ -6,11 +6,11 @@
 #    By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/12 09:56:36 by bvarea-k          #+#    #+#              #
-#    Updated: 2025/11/14 13:33:00 by bvarea-k         ###   ########.fr        #
+#    Updated: 2025/11/19 12:17:32 by bvarea-k         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CNAMES = main Account
+CNAMES = Account
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
@@ -25,7 +25,7 @@ all: $(NAME)
 
 $(NAME): $(OFILES)
 	@c++ $(CFLAGS) $(OFILES) -o $(NAME)
-	@echo "PhoneBook compiled"
+	@echo "Account compiled"
 
 $(OFILES): $(CFILES)
 	@mkdir -p $(OBJ)

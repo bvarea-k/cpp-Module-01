@@ -6,7 +6,7 @@
 /*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 12:01:52 by bvarea-k          #+#    #+#             */
-/*   Updated: 2025/11/19 12:02:59 by bvarea-k         ###   ########.fr       */
+/*   Updated: 2025/11/19 12:22:42 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 PhoneBook::PhoneBook() : nextIndex(0), count(0) {};
 
-int isAscii(char c)
+static int isAscii(char c)
 {
 	return (c >= 32 && c <= 126);
 }
 
-int isAsciiString(const std::string &s)
+static int isAsciiString(const std::string &s)
 {
 	for (size_t i = 0; i < s.size(); i++)
 	{
@@ -30,7 +30,7 @@ int isAsciiString(const std::string &s)
 }
 
 
-int isDigitString(const std::string &s)
+static int isDigitString(const std::string &s)
 {
 	for (size_t i = 0; i < s.size(); i++)
 	{
