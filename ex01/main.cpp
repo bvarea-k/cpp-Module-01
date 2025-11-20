@@ -6,7 +6,7 @@
 /*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 12:42:13 by bvarea-k          #+#    #+#             */
-/*   Updated: 2025/11/17 16:07:17 by bvarea-k         ###   ########.fr       */
+/*   Updated: 2025/11/20 11:17:43 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,27 @@ int	main(void){
 
 	while (1){
 		std::cout << "Enter command ADD, SEARCH or EXIT: ";
-		std::getline(std::cin, command);						//Lee y todo lo que se escriba va a command
-		if (command == "ADD")
-			phonebook.addContact();
-		else if (command == "SEARCH")
-			phonebook.searchContacts();
-		else if (command == "EXIT")
+		if (!std::getline(std::cin, command)){
+			std::cerr << "\nEOF detected. Exiting.\n";
+			return (0);
+		}						//Lee y todo lo que se escriba va a command
+		if (command == "ADD")  {
+			if (!phonebook.addContact()) {
+				std::cerr << "\nEOF detected. Exiting.\n";
+				return (0);
+			}
+		}
+		else if (command == "SEARCH") {
+			if (!phonebook.searchContacts()) {
+				std::cerr << "\nEOF detected. Exiting.\n";
+				return (0);
+			}
+		}
+		else if (command == "EXIT") {
 			break;
+		}
 		else
-			std::cout << "Invalid command.\n";
+			std::cerr << "Invalid command.\n";
 	}
 	return (0);
 }

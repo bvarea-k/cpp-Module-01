@@ -6,11 +6,11 @@
 #    By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/12 09:56:36 by bvarea-k          #+#    #+#              #
-#    Updated: 2025/11/19 12:17:32 by bvarea-k         ###   ########.fr        #
+#    Updated: 2025/11/20 09:02:46 by bvarea-k         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CNAMES = Account
+CNAMES = Account tests
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 

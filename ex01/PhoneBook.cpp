@@ -6,7 +6,7 @@
 /*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 12:01:52 by bvarea-k          #+#    #+#             */
-/*   Updated: 2025/11/19 12:22:42 by bvarea-k         ###   ########.fr       */
+/*   Updated: 2025/11/20 11:28:04 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,11 @@
 
 PhoneBook::PhoneBook() : nextIndex(0), count(0) {};
 
-static int isAscii(char c)
-{
+static int isAscii(char c) {
 	return (c >= 32 && c <= 126);
 }
 
-static int isAsciiString(const std::string &s)
-{
+static int isAsciiString(const std::string &s) {
 	for (size_t i = 0; i < s.size(); i++)
 	{
 		if (!isAscii(s[i]))
@@ -29,9 +27,7 @@ static int isAsciiString(const std::string &s)
 	return (1);
 }
 
-
-static int isDigitString(const std::string &s)
-{
+static int isDigitString(const std::string &s) {
 	for (size_t i = 0; i < s.size(); i++)
 	{
 		if (!isdigit(s[i]))
@@ -40,10 +36,9 @@ static int isDigitString(const std::string &s)
 	return (1);
 }
 
-
 void PhoneBook::printContact(int index) const {
 	if (index < 0 || index >= count)
-		return;
+		return ;
 
 	const Contact &c = contacts[index];
 	std::cout << "First Name: " << c.getFirstName() << "\n";
@@ -54,20 +49,28 @@ void PhoneBook::printContact(int index) const {
 }
 
 /*Va sacando prompts en los que pide info y se guarda la info en input*/
-void	PhoneBook::addContact()
-{
+bool PhoneBook::addContact() {
 	std::string	input;					//Declaro la variable input
 	Contact	&c = contacts[nextIndex];	//Declaro la variable c y la igualo a contacts[nextIndex]. c es tipo Contact y va referenciada.
 
 	std::cout << "Enter First Name: ";
 	while (true)
 	{
-		std::getline(std::cin, input);
-		if (!isAsciiString(input)){
-			std::cout << "Error: only ASCII characters are allowed.";
+		if (!std::getline(std::cin, input))
+		{
+			return false;
+		}
+		if (input.empty()) {
+			std::cerr << "Error: fields cannot be empty.";
 			std::cout << std::endl;
 			std::cout << "Enter First Name: ";
-		continue ;
+			continue ;
+		}
+		if (!isAsciiString(input)){
+			std::cerr << "Error: only ASCII characters are allowed.";
+			std::cout << std::endl;
+			std::cout << "Enter First Name: ";
+			continue ;
 		}
 		break ;
 	}
@@ -76,12 +79,21 @@ void	PhoneBook::addContact()
 	std::cout << "Enter Last Name: ";
 	while (true)
 	{
-		std::getline(std::cin, input);
-		if (!isAsciiString(input)){
-			std::cout << "Error: only ASCII characters are allowed.";
+		if (!std::getline(std::cin, input))
+		{
+			return (false);
+		}
+		if (input.empty()) {
+			std::cerr << "Error: fields cannot be empty.";
 			std::cout << std::endl;
 			std::cout << "Enter Last Name: ";
-		continue ;
+			continue ;
+		}
+		if (!isAsciiString(input)){
+			std::cerr << "Error: only ASCII characters are allowed.";
+			std::cout << std::endl;
+			std::cout << "Enter Last Name: ";
+			continue ;
 		}
 		break ;
 	}
@@ -90,12 +102,21 @@ void	PhoneBook::addContact()
 	std::cout << "Enter Nickname: ";
 	while (true)
 	{
-		std::getline(std::cin, input);
-		if (!isAsciiString(input)){
-			std::cout << "Error: only ASCII characters are allowed.";
+		if (!std::getline(std::cin, input))
+		{
+			return false;
+		}
+		if (input.empty()) {
+			std::cerr << "Error: fields cannot be empty.";
 			std::cout << std::endl;
 			std::cout << "Enter Nickname: ";
-		continue ;
+			continue ;
+		}
+		if (!isAsciiString(input)){
+			std::cerr << "Error: only ASCII characters are allowed.";
+			std::cout << std::endl;
+			std::cout << "Enter Nickname: ";
+			continue ;
 		}
 		break ;
 	}
@@ -104,9 +125,18 @@ void	PhoneBook::addContact()
 	std::cout << "Enter Phone Number: ";
 	while (true)
 	{
-		std::getline(std::cin, input);
+		if (!std::getline(std::cin, input))
+		{
+			return false;
+		}
+		if (input.empty()) {
+			std::cerr << "Error: fields cannot be empty.";
+			std::cout << std::endl;
+			std::cout << "Enter Phone Number: ";
+			continue ;
+		}
 		if (!isDigitString(input)){
-			std::cout << "Error: only numbers are allowed.";
+			std::cerr << "Error: only numbers are allowed.";
 			std::cout << std::endl;
 			std::cout << "Enter Phone Number: ";
 			continue ;
@@ -118,9 +148,18 @@ void	PhoneBook::addContact()
 	std::cout << "Enter Darkest Secret: ";
 	while (true)
 	{
-		std::getline(std::cin, input);
+		if (!std::getline(std::cin, input))
+		{
+			return false;
+		}
+		if (input.empty()) {
+			std::cerr << "Error: fields cannot be empty.";
+			std::cout << std::endl;
+			std::cout << "Enter Darkest Secret: ";
+			continue ;
+		}
 		if (!isAsciiString(input)){
-			std::cout << "Error: only ASCII characters are allowed.";
+			std::cerr << "Error: only ASCII characters are allowed.";
 			std::cout << std::endl;
 			std::cout << "Enter Darkest Secret: ";
 		continue ;
@@ -135,13 +174,14 @@ void	PhoneBook::addContact()
 
 	std::cout << "Contact added successfully!";
 	std::cout << std::endl;
+	return true;
 }
 
-void PhoneBook::searchContacts()
+bool PhoneBook::searchContacts()
 {
 	if (count == 0) {
 		std::cout << "PhoneBook is empty.\n";
-		return;
+		return false;
 	}
 
 	std::cout << std::setw(10) << "Index" << "|"		//Creo una tabla preciosa
@@ -173,7 +213,8 @@ void PhoneBook::searchContacts()
 	std::string input;									//Creo la variable input
 	int index = -1;										//Creo el indice que consultará el usuario
 	std::cout << "Enter index of contact to display: ";
-	std::getline(std::cin, input);
+	if (!std::getline(std::cin, input))
+		return false;
 
 	std::stringstream ss(input);						//creo 1 stringstream, para tratar un string como si fuera un flujo de entrada/salida
 	//permite leer de un string como si fuera str::cin, o sea puedo usar >> para sacar valores del string
@@ -181,12 +222,13 @@ void PhoneBook::searchContacts()
 
 	if (ss.fail()) {									//si no puedo guardar en index un número entero, fallo. Ej. me dan abc
 		std::cout << "Invalid index.\n";
-		return;
+		return true;
 	}
 	if (index < 0 || index >= count) {
 		std::cout << "Index out of range.\n";
-		return;
+		return true;
 	}
 
 	printContact(index);
+	return true;
 }

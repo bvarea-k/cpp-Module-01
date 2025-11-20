@@ -6,7 +6,7 @@
 /*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 12:37:57 by bvarea-k          #+#    #+#             */
-/*   Updated: 2025/11/18 12:46:31 by bvarea-k         ###   ########.fr       */
+/*   Updated: 2025/11/20 10:08:00 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ private:
 public:
  	PhoneBook();
 
-	void	addContact();
-	void	searchContacts();
+	bool	addContact();
+	bool	searchContacts();
 	void	printContact(int index) const;
 };
 
