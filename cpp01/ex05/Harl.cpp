@@ -6,7 +6,7 @@
 /*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 13:17:13 by bvarea-k          #+#    #+#             */
-/*   Updated: 2025/11/24 16:43:12 by bvarea-k         ###   ########.fr       */
+/*   Updated: 2025/11/24 16:58:51 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Harl::~Harl() {
 
 // REVISE
 void Harl::complain(std::string level) {
-	std::string levels[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	std::string complaintLevel[] = {"DEBUG", "INFO", "WARNING", "ERROR"}; //array de strings
 
 	void (Harl::*functions[])() = {
 		&Harl::debug,
@@ -34,13 +34,12 @@ void Harl::complain(std::string level) {
 		&Harl::error
 	};
 
-    // Buscar el nivel y llamar a la función correspondiente
-    for (int i = 0; i < 4; ++i) {
-        if (level == levels[i]) {
-            (this->*functions[i])();
-            return;
-        }
-    }
+	for (int i = 0; i < 4; i++) {
+		if (level == complaintLevel[i]) {
+ 			(this->*functions[i])();
+			return ;
+		}
+	}
 }
 
 void	Harl::debug( void ) {
