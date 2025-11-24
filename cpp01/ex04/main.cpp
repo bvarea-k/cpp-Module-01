@@ -6,34 +6,65 @@
 /*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 09:28:19 by bvarea-k          #+#    #+#             */
-/*   Updated: 2025/11/24 13:13:03 by bvarea-k         ###   ########.fr       */
+/*   Updated: 2025/11/24 16:09:14 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Sed.hpp"
 
-void	myReplace() {
-	std::ifstream in(filename);
-	std::string outFilename =filename + ".replace";
-	std::ofstream(filename.replace);
+/*npos is a constant of std::string that means "not found"*/
 
-    if (!in.is_open()) {
-        std::cerr << "Couldn't open file." << std::endl;
-        return ;
-    }
+std::string	myReplace(const std::string &line,
+						const std::string &s1, const std::string &s2) {
+	std::string	result;
+	size_t		pos = 0;
+	size_t		found = line.find(s1, pos);
 
-    std::string line;
-    while (std::getline(in, line)) {
-        std::cout << line << std::endl;
-    }
+	while (found != std::string::npos) { /*Mientras se haya encontrado s1*/
+		result.append(line, pos, found - pos);
+		result.append(s2);
+		pos = found + s1.length();
+		found = line.find(s1, pos);
+	}
+	result.append(line, pos, std::string::npos); //takes all tge char until the end of the string.
+	return (result);
 }
 
 int	main(int ac, char **av)
 {
 	if (ac != 4) {
-		std::cout << "You must enter 4 parameters." << std::endl;
+		std::cout << "Error. Enter: ./Sed <filename> <s1> <s2>" << std::endl;
 		return (1);
 	}
-    
+
+	std::string filename = av[1];
+	std::string s1 = av[2];
+	std::string s2 = av[3];
+
+	if (s1.empty()) {
+		std::cerr << "Error: s1 cannot be empty." << std::endl;
+		return (1);
+	}
+
+	std::ifstream in(filename.c_str());			/*Constructors in c++98 don't accept std::string, only const char**/
+	if (!in.is_open()) {
+		std::cerr << "Error: could not open input file." << std::endl;
+		return (1);
+	}
+
+	std::ofstream out((filename + ".replace").c_str());
+	if (!out.is_open()) {
+		std::cerr << "Error: could not open output file." << std::endl;
+		return (1);
+	}
+
+	std::string line;
+	while (std::getline(in, line)) {
+		out << myReplace(line, s1, s2);
+		if (!in.eof()) out << std::endl; /*if it's not the EOF, /n.*/
+	}
+
+	return (0);
 }
+
 

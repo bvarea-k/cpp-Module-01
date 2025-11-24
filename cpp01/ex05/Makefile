@@ -6,11 +6,11 @@
 #    By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/12 09:56:36 by bvarea-k          #+#    #+#              #
-#    Updated: 2025/11/24 13:15:34 by bvarea-k         ###   ########.fr        #
+#    Updated: 2025/11/24 16:39:26 by bvarea-k         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = main Sed
+SRC = main Harl
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
