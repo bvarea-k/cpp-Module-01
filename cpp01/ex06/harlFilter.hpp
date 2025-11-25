@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Harl.hpp                                           :+:      :+:    :+:   */
+/*   harlFilter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 13:17:07 by bvarea-k          #+#    #+#             */
-/*   Updated: 2025/11/24 17:05:06 by bvarea-k         ###   ########.fr       */
+/*   Updated: 2025/11/25 12:00:28 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Harl {
 			Harl();
 			~Harl();
 
-			void	complain( std::string level );
+			void	complainFilter( std::string level );
 };
 
 #endif

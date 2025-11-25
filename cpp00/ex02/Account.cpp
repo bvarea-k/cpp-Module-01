@@ -6,7 +6,7 @@
 /*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 09:22:28 by bvarea-k          #+#    #+#             */
-/*   Updated: 2025/11/25 09:21:07 by bvarea-k         ###   ########.fr       */
+/*   Updated: 2025/11/25 10:12:40 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,34 +15,31 @@
 #include <iomanip>
 #include <ctime>
 
-int	Account::_nbAccounts = 0;			//Inicializo las variables static de private
+int	Account::_nbAccounts = 0;
 int	Account::_totalAmount = 0;
 int	Account::_totalNbDeposits = 0;
 int	Account::_totalNbWithdrawals = 0;
 
-/*Defino el ¿constructor? Recibe el depósito inicial,
-así que debe llamarse cuando creo una cuenta nueva*/
-
 Account::Account( int initial_deposit ){
-	this->_accountIndex = Account::_nbAccounts;
-	this->_amount = initial_deposit;
-	this->_nbDeposits = 0;
-	this->_nbWithdrawals = 0;
+	_accountIndex = Account::_nbAccounts;
+	_amount = initial_deposit;
+	_nbDeposits = 0;
+	_nbWithdrawals = 0;
 
-	Account::_nbAccounts++;							//Al crear otra cuenta, aumenta el n. de cuentas total
-	Account::_totalAmount += initial_deposit;		//Añado al total del dinero de todas las cuentas
+	Account::_nbAccounts++;
+	Account::_totalAmount += initial_deposit;
 
 	Account::_displayTimestamp();
-	std::cout << "index:" << this->_accountIndex
-			<< ";amount:" << this->_amount
+	std::cout << "index:" << _accountIndex
+			<< ";amount:" << _amount
 			<< ";created" << std::endl;
 }
 
-Account::~Account()									//Destructor
+Account::~Account()
 {
 	Account::_displayTimestamp();
-	std::cout << "index:" << this->_accountIndex
-			<< ";amount:" << this->_amount
+	std::cout << "index:" << _accountIndex
+			<< ";amount:" << _amount
 			<< ";closed" << std::endl;
 }
 
@@ -53,7 +50,7 @@ void	Account::_displayTimestamp( void ) {
 	char buffer[16];							//16 para los 15 que necesito y el \0 final
 
 	strftime(buffer, sizeof(buffer), "%Y%m%d_%H%M%S", timeInfo); //strftime convierte tm en un string
-	std::cout << "[" << buffer << "] ";			//imprime el tiempo entre corchetes
+	std::cout << "[" << buffer << "] ";
 }
 
 /*void Account::_displayTimestamp(void)
@@ -73,19 +70,19 @@ void	Account::_displayTimestamp( void ) {
 }*/
 
 int	Account::getNbAccounts( void ){
-	return (Account::_nbAccounts); //¿Debo poner Account:: o funcionará sin?
+	return (Account::_nbAccounts);
 }
 
 int	Account::getTotalAmount( void ){
-	return (_totalAmount);
+	return (Account::_totalAmount);
 }
 
 int	Account::getNbDeposits( void ){
-	return (_totalNbDeposits);
+	return (Account::_totalNbDeposits);
 }
 
 int	Account::getNbWithdrawals( void ){
-	return (_totalNbWithdrawals);
+	return (Account::_totalNbWithdrawals);
 }
 
 void	Account::displayAccountsInfos( void ){
@@ -99,38 +96,38 @@ void	Account::displayAccountsInfos( void ){
 
 void	Account::makeDeposit( int deposit ){
 	Account::_displayTimestamp();
-	std::cout << "index:" << this->_accountIndex
-				<< ";p_amount:" << this->_amount
+	std::cout << "index:" << _accountIndex
+				<< ";p_amount:" << _amount
 				<< ";deposit:" << deposit;
-	this->_amount += deposit;
-	this->_nbDeposits++;
+	_amount += deposit;
+	_nbDeposits++;
 	Account::_totalAmount += deposit;
 	Account::_totalNbDeposits++;
 
-	std::cout << ";amount:" << this->_amount
-				<< ";nb_deposits:" << this->_nbDeposits
+	std::cout << ";amount:" << _amount
+				<< ";nb_deposits:" << _nbDeposits
   				<< std::endl;			
 }
 
 bool	Account::makeWithdrawal( int withdrawal ){
 	Account::_displayTimestamp();
-	std::cout << "index:" << this->_accountIndex
-				<< ";p_amount:" << this->_amount;
+	std::cout << "index:" << _accountIndex
+				<< ";p_amount:" << _amount;
 
-	if (withdrawal > this->_amount)
+	if (withdrawal > _amount)
 	{
 		std::cout << ";withdrawal:refused" << std::endl;
 		return (false);
 	}
 
-	this->_amount -= withdrawal;
-	this->_nbWithdrawals++;
+	_amount -= withdrawal;
+	_nbWithdrawals++;
 	Account::_totalAmount -= withdrawal;
 	Account::_totalNbWithdrawals++;
 
 	std::cout << ";withdrawal:" << withdrawal
-				<< ";amount:" << this->_amount
-				<< ";nb_withdrawals:" << this->_nbWithdrawals
+				<< ";amount:" << _amount
+				<< ";nb_withdrawals:" << _nbWithdrawals
 				<< std::endl;
 
 	return (true);

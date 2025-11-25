@@ -1,45 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Harl.cpp                                           :+:      :+:    :+:   */
+/*   harlFilter.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 13:17:13 by bvarea-k          #+#    #+#             */
-/*   Updated: 2025/11/24 16:58:51 by bvarea-k         ###   ########.fr       */
+/*   Updated: 2025/11/25 12:02:51 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#include "harlFilter.hpp"
 
-//Do I need constructor and destructor?
+Harl::Harl(){}
 
-Harl::Harl(){
-	std::cout << "Harl has arrived." << std::endl;
+Harl::~Harl() {}
+
+void Harl::complainFilter(std::string level) {
+	int	levelIndex = -1;
+	std::string complaintLevel[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	
+	for (int i = 0; i < 4; i++)
+		if (complaintLevel[i] == level)
+			levelIndex = i;
+	switch (levelIndex) {
+		case 0:
+			this->debug();
+		case 1:
+			this->info();
+		case 2:
+			this->warning();
+		case 3:
+			this->error();
+			break;
+
+	default:
+		std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 }
 
-Harl::~Harl() {
-	std::cout << "Harl is gone." << std::endl;
-}
 
-
-// REVISE
-void Harl::complain(std::string level) {
-	std::string complaintLevel[] = {"DEBUG", "INFO", "WARNING", "ERROR"}; //array de strings
-
-	void (Harl::*functions[])() = {
-		&Harl::debug,
-		&Harl::info,
-		&Harl::warning,
-		&Harl::error
-	};
-
-	for (int i = 0; i < 4; i++) {
-		if (level == complaintLevel[i]) {
- 			(this->*functions[i])();
-			return ;
-		}
-	}
 }
 
 void	Harl::debug( void ) {

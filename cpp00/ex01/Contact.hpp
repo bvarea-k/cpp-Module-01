@@ -6,7 +6,7 @@
 /*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 12:42:08 by bvarea-k          #+#    #+#             */
-/*   Updated: 2025/11/14 15:54:55 by bvarea-k         ###   ########.fr       */
+/*   Updated: 2025/11/25 10:00:10 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,6 @@ public:
 	void	setNickName(const std::string &nick);
 	void	setPhoneNum(const std::string &phone);
 	void	setSecret(const std::string &secret);
-	/*void setContact(std::string first, std::string last, std::string nick,
-		std::string phone, std::string secret);*/
 
 };
 

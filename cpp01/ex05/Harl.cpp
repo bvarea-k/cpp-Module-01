@@ -6,13 +6,11 @@
 /*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 13:17:13 by bvarea-k          #+#    #+#             */
-/*   Updated: 2025/11/24 16:58:51 by bvarea-k         ###   ########.fr       */
+/*   Updated: 2025/11/25 11:19:08 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
-
-//Do I need constructor and destructor?
 
 Harl::Harl(){
 	std::cout << "Harl has arrived." << std::endl;
@@ -22,10 +20,8 @@ Harl::~Harl() {
 	std::cout << "Harl is gone." << std::endl;
 }
 
-
-// REVISE
 void Harl::complain(std::string level) {
-	std::string complaintLevel[] = {"DEBUG", "INFO", "WARNING", "ERROR"}; //array de strings
+	std::string complaintLevel[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
 	void (Harl::*functions[])() = {
 		&Harl::debug,
