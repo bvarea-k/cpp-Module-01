@@ -6,7 +6,7 @@
 /*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 15:43:03 by bvarea-k          #+#    #+#             */
-/*   Updated: 2025/11/21 16:46:01 by bvarea-k         ###   ########.fr       */
+/*   Updated: 2025/11/25 09:23:34 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,5 @@ class HumanB
 		void	attack() const;
 		void	setWeapon(Weapon &weapon);
 };
-
-
-
 
 #endif

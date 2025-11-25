@@ -6,7 +6,7 @@
 /*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 09:22:28 by bvarea-k          #+#    #+#             */
-/*   Updated: 2025/11/20 10:30:29 by bvarea-k         ###   ########.fr       */
+/*   Updated: 2025/11/25 09:21:07 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	Account::_displayTimestamp( void ) {
 	struct tm *timeInfo = localtime(&currentTime);  //estructura de la librerá ctime. Almacena la info de fecha y hora desglosada
 	char buffer[16];							//16 para los 15 que necesito y el \0 final
 
-	strftime(buffer, sizeof(buffer), "%Y%m%d_%H%M%S", timeInfo);
+	strftime(buffer, sizeof(buffer), "%Y%m%d_%H%M%S", timeInfo); //strftime convierte tm en un string
 	std::cout << "[" << buffer << "] ";			//imprime el tiempo entre corchetes
 }
 

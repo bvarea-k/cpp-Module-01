@@ -6,7 +6,7 @@
 /*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 12:01:52 by bvarea-k          #+#    #+#             */
-/*   Updated: 2025/11/20 11:28:04 by bvarea-k         ###   ########.fr       */
+/*   Updated: 2025/11/25 09:26:26 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,11 @@ void PhoneBook::printContact(int index) const {
 		return ;
 
 	const Contact &c = contacts[index];
-	std::cout << "First Name: " << c.getFirstName() << "\n";
-	std::cout << "Last Name: " << c.getLastName() << "\n";
-	std::cout << "Nickname: " << c.getNickName() << "\n";
-	std::cout << "Phone Number: " << c.getPhoneNum() << "\n";
-	std::cout << "Darkest Secret: " << c.getSecret() << "\n";
+	std::cout << "First Name: " << c.getFirstName() << std::endl;
+	std::cout << "Last Name: " << c.getLastName() << std::endl;
+	std::cout << "Nickname: " << c.getNickName() << std::endl;
+	std::cout << "Phone Number: " << c.getPhoneNum() << std::endl;
+	std::cout << "Darkest Secret: " << c.getSecret() << std::endl;
 }
 
 /*Va sacando prompts en los que pide info y se guarda la info en input*/
