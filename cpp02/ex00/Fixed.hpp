@@ -6,7 +6,7 @@
 /*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 16:17:56 by bvarea-k          #+#    #+#             */
-/*   Updated: 2025/11/25 16:36:54 by bvarea-k         ###   ########.fr       */
+/*   Updated: 2025/11/27 13:06:54 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,19 @@
 
 # include <iostream>
 
+/*using std::cout;
+using std::endl;*/
+
 class Fixed {
 	private:
-		int	_numberValue;
+		int					_numberValue;
 		static const int	fractionalBits = 8;
 
 	public:
-		Fixed();
-		Fixed(const Fixed &other);
-		Fixed & operator = (const Fixed &other);
-		~Fixed();
+		Fixed();									//Default constructor
+		Fixed(const Fixed &other);					//Copy constructor
+		Fixed & operator = (const Fixed &other);	//Overload of = operator
+		~Fixed();									//Destructor
 
 		int		getRawBits( void ) const;
 		void	setRawBits ( int const raw );
