@@ -6,7 +6,7 @@
 /*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 15:38:08 by bvarea-k          #+#    #+#             */
-/*   Updated: 2025/11/21 12:50:26 by bvarea-k         ###   ########.fr       */
+/*   Updated: 2025/11/27 11:33:20 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,5 @@ Zombie::~Zombie() {
 
 void	Zombie::setName(std::string name){
 	_name = name;
-	std::cout << "Zombie " << _name << " has raised.\n";
+	std::cout << "Zombie " << _name << " has raised." << std::endl;
 }

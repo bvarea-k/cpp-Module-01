@@ -6,7 +6,7 @@
 /*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 12:42:08 by bvarea-k          #+#    #+#             */
-/*   Updated: 2025/11/25 10:00:10 by bvarea-k         ###   ########.fr       */
+/*   Updated: 2025/11/27 11:36:06 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,3 @@ public:
 };
 
 #endif
-
-
-/*
-std::string Contact::getFirstName() const { return firstName; }
-std::string Contact::getLastName() const { return lastName; }
-std::string Contact::getNickname() const { return nickName; }
-std::string Contact::getPhoneNumber() const { return phoneNumber; }
-std::string Contact::getDarkestSecret() const { return darkestSecret; }*/

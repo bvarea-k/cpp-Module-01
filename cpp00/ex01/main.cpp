@@ -6,31 +6,31 @@
 /*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 12:42:13 by bvarea-k          #+#    #+#             */
-/*   Updated: 2025/11/20 11:17:43 by bvarea-k         ###   ########.fr       */
+/*   Updated: 2025/11/27 11:35:32 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
 int	main(void){
-	PhoneBook	phonebook;										//llamo al constructor PhoneBook::PhoneBook() : nextIndex(0), count(0) {}
-	std::string	command;										//creo una variable para guardar mis comandos
+	PhoneBook	phonebook;
+	std::string	command;
 
 	while (1){
 		std::cout << "Enter command ADD, SEARCH or EXIT: ";
 		if (!std::getline(std::cin, command)){
-			std::cerr << "\nEOF detected. Exiting.\n";
+			std::cerr << "\nEOF detected. Exiting." << std::endl;
 			return (0);
-		}						//Lee y todo lo que se escriba va a command
+		}
 		if (command == "ADD")  {
 			if (!phonebook.addContact()) {
-				std::cerr << "\nEOF detected. Exiting.\n";
+				std::cerr << "\nEOF detected. Exiting." << std::endl;
 				return (0);
 			}
 		}
 		else if (command == "SEARCH") {
 			if (!phonebook.searchContacts()) {
-				std::cerr << "\nEOF detected. Exiting.\n";
+				std::cerr << "\nEOF detected. Exiting." << std::endl;
 				return (0);
 			}
 		}
@@ -38,7 +38,7 @@ int	main(void){
 			break;
 		}
 		else
-			std::cerr << "Invalid command.\n";
+			std::cerr << "Invalid command." << std::endl;
 	}
 	return (0);
 }

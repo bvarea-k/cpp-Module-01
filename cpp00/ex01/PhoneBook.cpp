@@ -6,7 +6,7 @@
 /*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 12:01:52 by bvarea-k          #+#    #+#             */
-/*   Updated: 2025/11/25 09:26:26 by bvarea-k         ###   ########.fr       */
+/*   Updated: 2025/11/27 11:40:33 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,11 @@ void PhoneBook::printContact(int index) const {
 	std::cout << "Darkest Secret: " << c.getSecret() << std::endl;
 }
 
-/*Va sacando prompts en los que pide info y se guarda la info en input*/
+/*It shows prompts that request info and saves it in input*/
+
 bool PhoneBook::addContact() {
-	std::string	input;					//Declaro la variable input
-	Contact	&c = contacts[nextIndex];	//Declaro la variable c y la igualo a contacts[nextIndex]. c es tipo Contact y va referenciada.
+	std::string	input;
+	Contact	&c = contacts[nextIndex];
 
 	std::cout << "Enter First Name: ";
 	while (true)
@@ -180,25 +181,25 @@ bool PhoneBook::addContact() {
 bool PhoneBook::searchContacts()
 {
 	if (count == 0) {
-		std::cout << "PhoneBook is empty.\n";
-		return false;
+		std::cout << "PhoneBook is empty." << std::endl;
+		return true;
 	}
 
-	std::cout << std::setw(10) << "Index" << "|"		//Creo una tabla preciosa
+	std::cout << std::setw(10) << "Index" << "|"		//To create the table
 			<< std::setw(10) << "First Name" << "|"
 			<< std::setw(10) << "Last Name" << "|"
 			<< std::setw(10) << "Nickname";
 			std::cout << std::endl;
 			
 	for (int i = 0; i < count; i++) {
-		std::cout << std::setw(10) << i << "|";			//Reservame 10 espacios y escribe i(el número)
+		std::cout << std::setw(10) << i << "|";
 
-		std::string fn = contacts[i].getFirstName();	//declaro variables y consigo la info con getters
+		std::string fn = contacts[i].getFirstName();	//I declare variables and get the info with getters
 		std::string ln = contacts[i].getLastName();
 		std::string nn = contacts[i].getNickName();
 
-		if (fn.size() > 10)							//Si fn mide más de 10
-			fn = fn.substr(0, 9) + ".";					//crea una copia de 9 caracteres de fn y añade un punto
+		if (fn.size() > 10)
+			fn = fn.substr(0, 9) + ".";					//creates a 9 char copy and adds full stop
 		if (ln.size() > 10)
 			ln = ln.substr(0, 9) + ".";
 		if (nn.size() > 10)
@@ -210,22 +211,21 @@ bool PhoneBook::searchContacts()
 		std::cout << std::endl;
 	}
 
-	std::string input;									//Creo la variable input
-	int index = -1;										//Creo el indice que consultará el usuario
+	std::string input;
+	int index = -1;										//Index that the user will check
 	std::cout << "Enter index of contact to display: ";
 	if (!std::getline(std::cin, input))
 		return false;
 
-	std::stringstream ss(input);						//creo 1 stringstream, para tratar un string como si fuera un flujo de entrada/salida
-	//permite leer de un string como si fuera str::cin, o sea puedo usar >> para sacar valores del string
+	std::stringstream ss(input);						//stringstream allows to read a string as if it was str::cin
 	ss >> index;
 
-	if (ss.fail()) {									//si no puedo guardar en index un número entero, fallo. Ej. me dan abc
-		std::cout << "Invalid index.\n";
+	if (ss.fail()) {
+		std::cout << "Invalid index." << std::endl;
 		return true;
 	}
 	if (index < 0 || index >= count) {
-		std::cout << "Index out of range.\n";
+		std::cout << "Index out of range." << std::endl;
 		return true;
 	}
 

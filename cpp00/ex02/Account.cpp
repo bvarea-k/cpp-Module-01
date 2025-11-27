@@ -6,7 +6,7 @@
 /*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 09:22:28 by bvarea-k          #+#    #+#             */
-/*   Updated: 2025/11/25 10:12:40 by bvarea-k         ###   ########.fr       */
+/*   Updated: 2025/11/27 11:46:57 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,31 +43,22 @@ Account::~Account()
 			<< ";closed" << std::endl;
 }
 
-void	Account::_displayTimestamp( void ) {
-	time_t currentTime = time(NULL);			//time_t guarda el tiemop en segundos. time(NULL)devuelve el tiempo actual en segundos desde el 1 de enero de 1970
-	//ahora currentTime tiene el tiempo actual en segundos
-	struct tm *timeInfo = localtime(&currentTime);  //estructura de la librerá ctime. Almacena la info de fecha y hora desglosada
-	char buffer[16];							//16 para los 15 que necesito y el \0 final
+//It shows current time
 
-	strftime(buffer, sizeof(buffer), "%Y%m%d_%H%M%S", timeInfo); //strftime convierte tm en un string
+/*void	Account::_displayTimestamp( void ) {
+	time_t currentTime = time(NULL);
+	struct tm *timeInfo = localtime(&currentTime);
+	char buffer[16];
+
+	strftime(buffer, sizeof(buffer), "%Y%m%d_%H%M%S", timeInfo);
 	std::cout << "[" << buffer << "] ";
-}
-
-/*void Account::_displayTimestamp(void)
-{
-	std::time_t now = std::time(NULL);
-	std::tm *ltm = std::localtime(&now);
-
-	std::cout << "["
-				<< (ltm->tm_year + 1900)
-				<< std::setw(2) << std::setfill('0') << ltm->tm_mon + 1
-				<< std::setw(2) << std::setfill('0') << ltm->tm_mday
-				<< "_"
-				<< std::setw(2) << std::setfill('0') << ltm->tm_hour
-				<< std::setw(2) << std::setfill('0') << ltm->tm_min
-				<< std::setw(2) << std::setfill('0') << ltm->tm_sec
-				<< "] ";
 }*/
+
+//It shows the .log time
+
+void	Account::_displayTimestamp( void ) {
+	std::cout << "[19920104_091532] ";
+}
 
 int	Account::getNbAccounts( void ){
 	return (Account::_nbAccounts);
