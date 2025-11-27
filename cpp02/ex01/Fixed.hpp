@@ -6,7 +6,7 @@
 /*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 16:17:56 by bvarea-k          #+#    #+#             */
-/*   Updated: 2025/11/27 13:24:23 by bvarea-k         ###   ########.fr       */
+/*   Updated: 2025/11/27 13:27:16 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,17 @@ class Fixed {
 	public:
 		Fixed();									//Default constructor
 		Fixed(const Fixed &other);					//Copy constructor
+		Fixed(const int value);						//Int constructor
+		Fixed(const float value);					//Float constructor
 		Fixed &operator=(const Fixed &other);	//Overload of = operator
 		~Fixed();									//Destructor
 
 		int		getRawBits( void ) const;
 		void	setRawBits ( int const raw );
+		float	toFloat( void ) const;
+		int		toInt( void ) const;
 };
+
+std::ostream &operator<<(std::ostream &out, const Fixed &fixed);
 
 #endif
