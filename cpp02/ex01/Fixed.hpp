@@ -6,7 +6,7 @@
 /*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 16:17:56 by bvarea-k          #+#    #+#             */
-/*   Updated: 2025/11/27 13:27:16 by bvarea-k         ###   ########.fr       */
+/*   Updated: 2025/11/28 12:00:20 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FIXED_HPP
 
 # include <iostream>
+# include <cmath>
 
 /*using std::cout;
 using std::endl;*/
@@ -21,7 +22,7 @@ using std::endl;*/
 class Fixed {
 	private:
 		int					_numberValue;
-		static const int	fractionalBits = 8;
+		static const int	_fractionalBits = 8;
 
 	public:
 		Fixed();									//Default constructor
@@ -40,3 +41,10 @@ class Fixed {
 std::ostream &operator<<(std::ostream &out, const Fixed &fixed);
 
 #endif
+
+/*My class doesnt save afixed-point, but an int (_numberValue)
+that represents a number with 8 bits after the point.
+if _numberValue = 256, 1.0
+if _numberValue = 512, 2.0
+real number = _numberValue/256 
+This and this are the same: value << 8 = value * 256 */

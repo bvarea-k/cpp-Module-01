@@ -6,7 +6,7 @@
 /*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 16:17:56 by bvarea-k          #+#    #+#             */
-/*   Updated: 2025/11/27 13:24:23 by bvarea-k         ###   ########.fr       */
+/*   Updated: 2025/11/28 11:09:38 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ using std::endl;*/
 class Fixed {
 	private:
 		int					_numberValue;
-		static const int	fractionalBits = 8;
+		static const int	_fractionalBits = 8;
 
 	public:
 		Fixed();									//Default constructor
