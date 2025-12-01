@@ -6,11 +6,11 @@
 #    By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/25 16:14:42 by bvarea-k          #+#    #+#              #
-#    Updated: 2025/12/01 11:01:07 by bvarea-k         ###   ########.fr        #
+#    Updated: 2025/12/01 16:27:07 by bvarea-k         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = main ScavTrap
+SRC = main ClapTrap ScavTrap
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
@@ -25,7 +25,7 @@ all: $(NAME)
 
 $(NAME): $(OFILES)
 	@c++ $(CFLAGS) $(OFILES) -o $(NAME)
-	@echo "ScavTrap compiled"
+	@echo "Ex01 compiled"
 
 $(OFILES): $(CFILES)
 	@mkdir -p $(OBJ)
