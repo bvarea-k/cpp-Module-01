@@ -6,11 +6,11 @@
 #    By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/25 16:14:42 by bvarea-k          #+#    #+#              #
-#    Updated: 2025/12/02 12:39:03 by bvarea-k         ###   ########.fr        #
+#    Updated: 2025/12/02 16:21:06 by bvarea-k         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = main BSP
+SRC = main bsp Point Fixed
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
