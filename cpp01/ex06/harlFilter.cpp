@@ -6,7 +6,7 @@
 /*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 13:17:13 by bvarea-k          #+#    #+#             */
-/*   Updated: 2025/11/25 12:08:53 by bvarea-k         ###   ########.fr       */
+/*   Updated: 2025/12/02 12:17:57 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,7 @@ void Harl::complainFilter(std::string level) {
 
 	default:
 		std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
-}
-
-
+	}
 }
 
 void	Harl::debug( void ) {
