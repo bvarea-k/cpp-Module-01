@@ -6,7 +6,7 @@
 /*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 13:37:51 by bvarea-k          #+#    #+#             */
-/*   Updated: 2025/12/02 16:52:30 by bvarea-k         ###   ########.fr       */
+/*   Updated: 2025/12/03 16:12:00 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int main()
 	Point p2(5, 0);
 	Point p3(-1, 5);
 	Point p4(5, 10);
-	Point p5(3, 7);
+	Point p5(3, 5);
 
 	std::cout << "Is p1 inside? " << bsp(a, b, c, p1) << std::endl;
 	std::cout << "Is p2 inside? " << bsp(a, b, c, p2) << std::endl;

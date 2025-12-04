@@ -6,7 +6,7 @@
 /*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 16:37:24 by bvarea-k          #+#    #+#             */
-/*   Updated: 2025/12/01 17:55:08 by bvarea-k         ###   ########.fr       */
+/*   Updated: 2025/12/04 12:29:24 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define SCAVTRAP_HPP
 
 # include <iostream>
-#include "ClapTrap.hpp"
+# include "ClapTrap.hpp"
 
 class ScavTrap : public ClapTrap {
 
@@ -25,7 +25,7 @@ class ScavTrap : public ClapTrap {
 	~ScavTrap();
 
 	void	attack(const std::string &target);
-	void guardGate();
+	void	guardGate();
 };
 
 
