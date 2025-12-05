@@ -6,7 +6,7 @@
 /*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 11:02:26 by bvarea-k          #+#    #+#             */
-/*   Updated: 2025/12/04 13:06:10 by bvarea-k         ###   ########.fr       */
+/*   Updated: 2025/12/05 12:23:02 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <iostream>
 
 class ClapTrap {
-	private:
+	protected:
 		std::string	_name;
 		int _hitPoints;
 		int	_energyPoints;
@@ -27,7 +27,7 @@ class ClapTrap {
 		ClapTrap(std::string name);
 		ClapTrap(const ClapTrap &other);
 		ClapTrap& operator=(const ClapTrap &other);
-		~ClapTrap();
+		/*virtual */~ClapTrap();
 		
 		void	attack(const std::string &target);
 		void	takeDamage(unsigned int amount);

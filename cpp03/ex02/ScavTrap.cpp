@@ -6,7 +6,7 @@
 /*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 17:02:14 by bvarea-k          #+#    #+#             */
-/*   Updated: 2025/12/04 12:39:24 by bvarea-k         ###   ########.fr       */
+/*   Updated: 2025/12/05 12:09:33 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,15 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
 //It calls ClapTrap copy constructor
 ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other) {
 	std::cout << "ScavTrap copy constructor called." << std::endl;
+}
+
+ScavTrap& ScavTrap::operator=(const ScavTrap &other) {
+	std::cout << "ScavTrap copy assignment operator called." << std::endl;
+
+	if (this != &other) {
+		ClapTrap::operator=(other);
+	}
+	return (*this);
 }
 
 ScavTrap::~ScavTrap() {
