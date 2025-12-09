@@ -6,7 +6,7 @@
 /*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 16:47:24 by bvarea-k          #+#    #+#             */
-/*   Updated: 2025/11/28 17:07:03 by bvarea-k         ###   ########.fr       */
+/*   Updated: 2025/12/09 16:48:39 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,7 +150,13 @@ Fixed	&Fixed::min(Fixed &f1, Fixed &f2) {
 	else
 		return (f2);
 }
-static Fixed	&max(Fixed &f1, Fixed &f2);
+
+Fixed &Fixed::max(Fixed &f1, Fixed &f2) {
+	if (f1 > f2)
+		return (f1);
+	else
+		return (f2);
+}
 
 const Fixed &Fixed::min(const Fixed &f1, const Fixed &f2) {
 	if (f1 < f2)
@@ -159,4 +165,9 @@ const Fixed &Fixed::min(const Fixed &f1, const Fixed &f2) {
  		return (f2);
 }
 
-static const	Fixed &max(const Fixed &f1, const Fixed &f2);
+const Fixed &Fixed::max(const Fixed &f1, const Fixed &f2) {
+	if (f1 > f2)
+		return (f1);
+	else
+		return (f2);
+}
