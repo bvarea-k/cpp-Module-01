@@ -6,7 +6,7 @@
 /*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 16:47:24 by bvarea-k          #+#    #+#             */
-/*   Updated: 2025/11/28 12:20:47 by bvarea-k         ###   ########.fr       */
+/*   Updated: 2025/12/10 10:24:25 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,9 @@ Fixed::Fixed(const float value) {
 }
 
 Fixed &Fixed::operator=(const Fixed &other) {
-	std::cout << "Copy assignment operator called" << std::endl; //Shown when assigning
-	if (this != &other)								//You don't need to copy it if they are the same
+	std::cout << "Copy assignment operator called" << std::endl;
+	if (this != &other)	
 		this->_numberValue = other.getRawBits();
-
 	return (*this);
 }
 

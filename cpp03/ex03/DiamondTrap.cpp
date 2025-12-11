@@ -6,7 +6,7 @@
 /*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 14:12:39 by bvarea-k          #+#    #+#             */
-/*   Updated: 2025/12/05 17:04:31 by bvarea-k         ###   ########.fr       */
+/*   Updated: 2025/12/11 09:51:41 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,11 @@ DiamondTrap::DiamondTrap(std::string name)
 /*TO DO: why is this wrong????*/
 
 DiamondTrap::DiamondTrap(const DiamondTrap &other)
-: ClapTrap(other), FragTrap(other), ScavTrap(other), _name(other._name) {
-	std::cout << "DiamondTrap: Copy constructor called for " << other._name << std::endl;
-	*this = other;
+:	ClapTrap(other),
+	FragTrap(other),
+	ScavTrap(other),
+	_name(other._name) {
+	std::cout << "DiamondTrap: Copy constructor called for " << _name << std::endl;
 }
 
 DiamondTrap& DiamondTrap::operator=(const DiamondTrap &other) {
@@ -44,6 +46,9 @@ DiamondTrap& DiamondTrap::operator=(const DiamondTrap &other) {
 
 	if (this != &other) {
 		ClapTrap::operator=(other);
+		ScavTrap::operator=(other);
+		FragTrap::operator=(other);
+		this->_name = other._name;
 	}
 	std::cout << "DiamondTrap: Copy assignment operator called for " << _name
 				<< " = " << other._name << std::endl;

@@ -6,7 +6,7 @@
 /*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 16:17:56 by bvarea-k          #+#    #+#             */
-/*   Updated: 2025/11/28 11:09:38 by bvarea-k         ###   ########.fr       */
+/*   Updated: 2025/12/10 09:19:02 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Fixed {
 	public:
 		Fixed();									//Default constructor
 		Fixed(const Fixed &other);					//Copy constructor
-		Fixed &operator=(const Fixed &other);	//Overload of = operator
+		Fixed &operator=(const Fixed &other);		//Overload of = operator
 		~Fixed();									//Destructor
 
 		int		getRawBits( void ) const;

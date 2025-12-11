@@ -6,7 +6,7 @@
 /*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 16:47:24 by bvarea-k          #+#    #+#             */
-/*   Updated: 2025/12/09 16:48:39 by bvarea-k         ###   ########.fr       */
+/*   Updated: 2025/12/10 10:56:53 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,9 @@ Fixed::Fixed(const float value) {
 }
 
 Fixed &Fixed::operator=(const Fixed &other) {
-	std::cout << "Copy assignment operator called" << std::endl; //Shown when assigning
-	if (this != &other)								//You don't need to copy it if they are the same
+	std::cout << "Copy assignment operator called" << std::endl;
+	if (this != &other)
 		this->_numberValue = other.getRawBits();
-
 	return (*this);
 }
 
@@ -121,12 +120,13 @@ bool Fixed::operator!=(const Fixed &other) const {
 
 				/***Increment / Decrement operators***/
 
+/*Preincrement*/
 Fixed &Fixed::operator++(void) {
 	_numberValue++;
 	return (*this);
-	
 }
 
+/*Postincrement*/
 Fixed Fixed::operator++(int) {
 	 Fixed tmp(*this);			//Copy before incrementing
 	_numberValue++;
@@ -144,6 +144,8 @@ Fixed Fixed::operator--(int) {
 	return (tmp); 
 }
 
+				/***Min/max***/
+
 Fixed	&Fixed::min(Fixed &f1, Fixed &f2) {
 	if (f1 < f2)
 		return (f1);
@@ -160,7 +162,7 @@ Fixed &Fixed::max(Fixed &f1, Fixed &f2) {
 
 const Fixed &Fixed::min(const Fixed &f1, const Fixed &f2) {
 	if (f1 < f2)
-		return f1;
+		return (f1);
 	else
  		return (f2);
 }

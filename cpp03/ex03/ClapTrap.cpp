@@ -6,7 +6,7 @@
 /*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 11:02:07 by bvarea-k          #+#    #+#             */
-/*   Updated: 2025/12/05 14:02:07 by bvarea-k         ###   ########.fr       */
+/*   Updated: 2025/12/11 09:54:50 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ ClapTrap::ClapTrap(std::string name)
 
 ClapTrap::ClapTrap(const ClapTrap &other) {
 	std::cout << "ClapTrap copy constructor called for " << other._name << std::endl;
-	*this = other;
 }
 
 

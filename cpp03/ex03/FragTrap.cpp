@@ -6,7 +6,7 @@
 /*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/04 12:36:13 by bvarea-k          #+#    #+#             */
-/*   Updated: 2025/12/05 13:59:49 by bvarea-k         ###   ########.fr       */
+/*   Updated: 2025/12/11 09:53:17 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name) {
 
 FragTrap::FragTrap(const FragTrap &other) : ClapTrap(other) {
 	std::cout << "FragTrap: Copy constructor called for " << other._name << std::endl;
-	*this = other;
 }
 
 FragTrap& FragTrap::operator=(const FragTrap &other) {

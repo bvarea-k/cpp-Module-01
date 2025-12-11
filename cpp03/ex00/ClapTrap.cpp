@@ -6,7 +6,7 @@
 /*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 11:02:07 by bvarea-k          #+#    #+#             */
-/*   Updated: 2025/12/05 12:17:11 by bvarea-k         ###   ########.fr       */
+/*   Updated: 2025/12/11 09:23:12 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,9 @@ ClapTrap& ClapTrap::operator=(const ClapTrap &other) {
 ClapTrap::~ClapTrap() {
 	std::cout << "ClapTrap " << _name << " destructor called." << std::endl;
 }
+
+
+								/***Member functions***/
 
 void	ClapTrap::attack(const std::string& target) {
 	if (_hitPoints < 1) {
