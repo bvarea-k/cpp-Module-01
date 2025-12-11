@@ -6,7 +6,7 @@
 /*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 14:12:39 by bvarea-k          #+#    #+#             */
-/*   Updated: 2025/12/11 09:51:41 by bvarea-k         ###   ########.fr       */
+/*   Updated: 2025/12/11 13:28:17 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ DiamondTrap::DiamondTrap()
 }
 
 DiamondTrap::DiamondTrap(std::string name)
-	: ClapTrap(name + "_clap_name"), FragTrap(name), ScavTrap(name), _name(name) {
+	: ClapTrap(name + "_clap_name"), _name(name) {
 
 	_hitPoints    = FragTrap::_hitPoints;
 	_energyPoints = ScavTrap::_energyPoints;
@@ -31,15 +31,15 @@ DiamondTrap::DiamondTrap(std::string name)
 	std::cout << "DiamondTrap: Constructor called for " << _name << std::endl;
 }
 
-/*TO DO: why is this wrong????*/
-
 DiamondTrap::DiamondTrap(const DiamondTrap &other)
-:	ClapTrap(other),
-	FragTrap(other),
-	ScavTrap(other),
-	_name(other._name) {
+: ClapTrap(other), _name(other._name)
+{
+	_hitPoints    = other._hitPoints;
+	_energyPoints = other._energyPoints;
+	_attackDamage = other._attackDamage;
 	std::cout << "DiamondTrap: Copy constructor called for " << _name << std::endl;
 }
+
 
 DiamondTrap& DiamondTrap::operator=(const DiamondTrap &other) {
 	
