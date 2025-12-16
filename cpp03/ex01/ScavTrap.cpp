@@ -6,7 +6,7 @@
 /*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 17:02:14 by bvarea-k          #+#    #+#             */
-/*   Updated: 2025/12/05 12:09:33 by bvarea-k         ###   ########.fr       */
+/*   Updated: 2025/12/16 10:00:58 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,16 +47,16 @@ ScavTrap::~ScavTrap() {
 }
 
 void ScavTrap::guardGate() {
-	std::cout << "ScavTrap is in guarding mode" << std::endl;
+	std::cout << "ScavTrap " << _name << " is in guarding mode" << std::endl;
 }
 
 void	ScavTrap::attack(const std::string& target) {
 	if (this->_hitPoints < 1) {
-		std::cout << "ScavTrap " << this->_name << " is dead." << std::endl;
+		std::cout << "ScavTrap " << _name << " is dead." << std::endl;
 		return ;
 	}
 	if (this->_energyPoints < 1) {
-		std::cout << "ScavTrap " << this->_name << " has no energy points left to attack" << std::endl;
+		std::cout << "ScavTrap " << _name << " has no energy points left to attack" << std::endl;
 		return ;
 	}
 	this->_energyPoints--;

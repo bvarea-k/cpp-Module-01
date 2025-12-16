@@ -6,7 +6,7 @@
 /*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 13:03:29 by bvarea-k          #+#    #+#             */
-/*   Updated: 2025/12/05 14:10:14 by bvarea-k         ###   ########.fr       */
+/*   Updated: 2025/12/16 09:17:08 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ int main(void)
 	clap2.beRepaired(10);
 	clap2.attack("evil enemy");
 	clap2.takeDamage(1);
+	
+	std::cout << "\n--- End of tests ---" << std::endl;
 	return (0);
 }
 

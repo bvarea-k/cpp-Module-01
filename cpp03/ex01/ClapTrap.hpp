@@ -6,7 +6,7 @@
 /*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 11:02:26 by bvarea-k          #+#    #+#             */
-/*   Updated: 2025/12/05 12:23:02 by bvarea-k         ###   ########.fr       */
+/*   Updated: 2025/12/16 09:09:24 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class ClapTrap {
 		ClapTrap(std::string name);
 		ClapTrap(const ClapTrap &other);
 		ClapTrap& operator=(const ClapTrap &other);
-		/*virtual */~ClapTrap();
+		~ClapTrap();
 		
 		void	attack(const std::string &target);
 		void	takeDamage(unsigned int amount);

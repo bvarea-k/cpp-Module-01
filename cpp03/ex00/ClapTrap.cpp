@@ -6,7 +6,7 @@
 /*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 11:02:07 by bvarea-k          #+#    #+#             */
-/*   Updated: 2025/12/11 09:23:12 by bvarea-k         ###   ########.fr       */
+/*   Updated: 2025/12/16 09:55:26 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,13 @@ ClapTrap::ClapTrap(const ClapTrap &other)
 		_hitPoints (other._hitPoints),
 		_energyPoints (other._energyPoints),
 		_attackDamage (other._attackDamage) {
-			std::cout << "Copy constructor called." << std::endl;
+		std::cout << "Copy constructor called." << std::endl;
 }
 
 /*ClapTrap::ClapTrap(const ClapTrap &other) {
 	std::cout << "ClapTrap copy constructor called." << std::endl;
 	*this = other;
-}
-*/
+}*/
 
 ClapTrap& ClapTrap::operator=(const ClapTrap &other) {
 	std::cout << "ClapTrap copy assignment operator called." << std::endl;
