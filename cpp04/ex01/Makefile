@@ -6,11 +6,11 @@
 #    By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/25 16:14:42 by bvarea-k          #+#    #+#              #
-#    Updated: 2025/12/17 12:23:51 by bvarea-k         ###   ########.fr        #
+#    Updated: 2025/12/17 12:52:34 by bvarea-k         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = main Animal Cat Dog WrongAnimal WrongCat
+SRC = main Animal Cat Dog
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
@@ -19,13 +19,13 @@ OBJ = obj/
 CFILES = $(addsuffix .cpp, $(SRC))
 OFILES = $(addprefix $(OBJ), $(addsuffix .o, $(SRC)))
 
-NAME = Polymorphism
+NAME = Brain
 
 all: $(NAME)
 
 $(NAME): $(OFILES)
 	@c++ $(CFLAGS) $(OFILES) -o $(NAME)
-	@echo "Polymorphism compiled"
+	@echo "Brain compiled"
 
 $(OFILES): $(CFILES)
 	@mkdir -p $(OBJ)
