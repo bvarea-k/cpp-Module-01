@@ -6,11 +6,11 @@
 #    By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/25 16:14:42 by bvarea-k          #+#    #+#              #
-#    Updated: 2025/12/18 14:17:46 by bvarea-k         ###   ########.fr        #
+#    Updated: 2025/12/18 17:07:26 by bvarea-k         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = main Animal Cat Dog Brain
+SRC = main AAnimal Cat Dog Brain
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
@@ -19,13 +19,13 @@ OBJ = obj/
 CFILES = $(addsuffix .cpp, $(SRC))
 OFILES = $(addprefix $(OBJ), $(addsuffix .o, $(SRC)))
 
-NAME = Brain
+NAME = AAnimal
 
 all: $(NAME)
 
 $(NAME): $(OFILES)
 	@c++ $(CFLAGS) $(OFILES) -o $(NAME)
-	@echo "Brain compiled"
+	@echo "AAnimal compiled"
 
 $(OFILES): $(CFILES)
 	@mkdir -p $(OBJ)
