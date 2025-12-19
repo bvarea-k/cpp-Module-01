@@ -6,7 +6,7 @@
 /*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 17:05:48 by bvarea-k          #+#    #+#             */
-/*   Updated: 2025/12/18 12:46:22 by bvarea-k         ###   ########.fr       */
+/*   Updated: 2025/12/19 12:26:33 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ class Cat : public Animal {
 		void makeSound() const;
 		bool addIdea(std::string idea);
 		std::string getIdea(int index) const;
+		void setIdea(int index, std::string idea);
 };
 
 #endif

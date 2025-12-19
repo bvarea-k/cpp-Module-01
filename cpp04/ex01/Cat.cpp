@@ -6,7 +6,7 @@
 /*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 11:23:27 by bvarea-k          #+#    #+#             */
-/*   Updated: 2025/12/18 14:15:45 by bvarea-k         ###   ########.fr       */
+/*   Updated: 2025/12/19 12:26:08 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,8 @@ bool Cat::addIdea(std::string idea) {
 
 std::string Cat::getIdea(int index) const {
 	return _brain->getIdea(index);
+}
+
+void Cat::setIdea(int index, std::string idea) {
+	_brain->setIdea(index, idea);
 }

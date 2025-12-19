@@ -13,8 +13,8 @@
 #ifndef AANIMAL_HPP
  #define AANIMAL_HPP
 
- # include <iostream>
- 
+# include <iostream>
+
 class AAnimal {
 	protected:
 		std::string _type;
@@ -28,7 +28,6 @@ class AAnimal {
 
 		virtual void makeSound() const = 0;
 		std::string getType() const;
-		void setType(std::string type);
 };
 
 #endif
