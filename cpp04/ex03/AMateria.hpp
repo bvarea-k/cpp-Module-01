@@ -6,7 +6,7 @@
 /*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 13:13:40 by bvarea-k          #+#    #+#             */
-/*   Updated: 2025/12/19 14:06:11 by bvarea-k         ###   ########.fr       */
+/*   Updated: 2025/12/22 10:13:02 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <iostream>
 
-class ICharacter; // Forward declaration
+class ICharacter; // Forward declaration avoids circular dependency
 
 class AMateria {
 	protected:

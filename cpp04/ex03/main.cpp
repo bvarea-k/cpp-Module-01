@@ -6,7 +6,7 @@
 /*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 13:41:16 by bvarea-k          #+#    #+#             */
-/*   Updated: 2025/12/19 16:54:32 by bvarea-k         ###   ########.fr       */
+/*   Updated: 2025/12/22 11:00:09 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int main()
 	/*std::cout << "========== SUBJECT MANDATORY TEST ==========" << std::endl;
 	{
 		IMateriaSource* src = new MateriaSource();
-		src->learnMateria(new Ice());				//Intentional leaks, ice is cloned
+		src->learnMateria(new Ice());				//Intentional leaks, creates ice in heap but learnMateria clones it without deleting ice
 		src->learnMateria(new Cure());				//Same, intentional leaks
 		ICharacter* me = new Character("me");
 		AMateria* tmp;
@@ -37,6 +37,12 @@ int main()
 		delete src;
 	}*/
 
+	/*std::cout << "========== HOW TO FIX THE LEAKS ==========" << std::endl
+		AMateria* ice = new Ice();
+		src->learnMateria(ice);
+		delete ice;*/
+
+
 	std::cout << "\n========== TEST 1: FULL INVENTORY ==========" << std::endl;
 	{
 		ICharacter* hero = new Character("Hero");
@@ -46,11 +52,6 @@ int main()
 		hero->equip(new Cure());
 		hero->equip(new Ice());
 		hero->equip(new Cure());
-		
-		std::cout << "\nTrying to equip 5th materia (should do nothing):" << std::endl;
-		AMateria* extra = new Ice();
-		hero->equip(extra); // This should not equip (inventory full)
-		delete extra; // Must delete since it wasn't equipped
 		
 		// Use all equipped materias
 		ICharacter* target = new Character("Target");
@@ -352,5 +353,5 @@ int main()
 
 	std::cout << "\n========== ALL TESTS COMPLETED ==========" << std::endl;
 	
-	return 0;
+	return (0);
 }

@@ -20,11 +20,11 @@ class Animal {
 		std::string _type;
 		
 	public:
-		Animal();
-		Animal(std::string type);
-		Animal(const Animal &other);
-		Animal &operator=(const Animal &other);
-		virtual ~Animal();
+		Animal();								//Default constructor
+		Animal(std::string type);				//Parameterized constructor
+		Animal(const Animal &other);			//Copy constructor
+		Animal &operator=(const Animal &other);	//Copy assignment operator
+		virtual ~Animal();						//Destructor
 
 		virtual void makeSound() const;
 		std::string getType() const;

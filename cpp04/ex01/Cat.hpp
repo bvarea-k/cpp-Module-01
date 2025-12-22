@@ -6,12 +6,12 @@
 /*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 17:05:48 by bvarea-k          #+#    #+#             */
-/*   Updated: 2025/12/19 12:26:33 by bvarea-k         ###   ########.fr       */
+/*   Updated: 2025/12/22 09:14:47 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGCAT_HPP
-# define WRONGCAT_HPP
+#ifndef CAT_HPP
+# define CAT_HPP
 
 # include "Animal.hpp"
 # include "Brain.hpp"
