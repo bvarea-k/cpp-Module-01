@@ -24,21 +24,51 @@ flowchart LR
 
 ## 🧠 Core Concepts Visualization
 
-### 🧱 From Object to Class
+### 🧱 CPP00 — First Steps in C++
 
-```mermaid
-classDiagram
-    class Human {
-        +name: string
-        +age: int
-        +eat()
-        +sleep()
-    }
-```
+> *"From C to C++ mindset shift"*
+
+* Namespaces (`std::`)
+* Classes & member functions
+* Streams (`std::cout`, `std::cin`)
+* Basic encapsulation
+
+✅ **Goal:** Understand how C++ structures code differently from C.
+
+⚠️ **Common mistakes:**
+
+* Forgetting `std::`
+* Misunderstanding class vs struct
+* Not separating `.hpp` / `.cpp`
+
+📏 **Evaluator Tip (PhoneBook formatting):**
+
+Some evaluators pay **special attention** to column alignment in the `PhoneBook` exercise.
+
+* The output must be perfectly aligned using fixed-width columns.
+* Vertical separators (`|`) must line up exactly.
+
+💥 **Important detail:**
+Only use **ASCII characters** in displayed strings.
+
+Characters like:
+
+* `á`, `é`, `ñ`, etc.
+
+may visually take more space than expected, breaking alignment even if your code seems correct.
+
+🧪 **Recommendation:**
+
+* Stick to standard ASCII characters
+* Use `std::setw()` for consistent formatting
+* Test your output with different inputs
+
+👉 Misalignment = very common reason for losing points in this exercise.
+
 
 ---
 
-### 🧠 CPP01: Stack vs Heap
+### 🧠 CPP01 — Stack vs Heap
 
 ```mermaid
 flowchart TD
@@ -57,7 +87,7 @@ flowchart TD
 
 ---
 
-### ⚙️ CPP02: Orthodox Canonical Form
+### ⚙️ CPP02 — Orthodox Canonical Form
 
 ```mermaid
 flowchart LR
@@ -69,7 +99,7 @@ flowchart LR
 
 ---
 
-### 🧬 CPP03: Inheritance Hierarchy
+### 🧬 CPP03 — Inheritance Hierarchy
 
 ```mermaid
 classDiagram
@@ -95,7 +125,7 @@ classDiagram
 
 ---
 
-### 🎭 CPP04: Polymorphism
+### 🎭 CPP04 — Polymorphism
 
 ```mermaid
 classDiagram
@@ -162,5 +192,3 @@ valgrind --leak-check=full ./program
 * Object slicing in inheritance
 
 ---
-
-Master them, and CPP05+ becomes much easier.
