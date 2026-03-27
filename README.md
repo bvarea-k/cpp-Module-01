@@ -63,7 +63,23 @@ may visually take more space than expected, breaking alignment even if your code
 * Use `std::setw()` for consistent formatting
 * Test your output with different inputs
 
-👉 Misalignment = very common reason for losing points in this exercise.
+✅ Correct Output
+|     index|first name| last name|  nickname|
+|         0|      John|       Doe|      JDoe|
+
+✔️ Columns aligned
+✔️ Width respected
+✔️ Clean formatting
+
+❌ Incorrect Output
+| index | first name | last name | nickname |
+| 0 | John | Doe | JDoe |
+
+💥 Problems:
+
+Misaligned columns
+Inconsistent spacing
+Wrong formatting
 
 
 ---
