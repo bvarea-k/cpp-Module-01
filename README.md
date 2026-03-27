@@ -37,9 +37,9 @@ flowchart LR
 
 ⚠️ **Common mistakes:**
 
-* Forgetting `std::`
-* Misunderstanding class vs struct
-* Not separating `.hpp` / `.cpp`
+1. Forgetting `std::`
+2. Misunderstanding class vs struct
+3. Not separating `.hpp` / `.cpp`
 
 📏 **Evaluator Tip (PhoneBook formatting):**
 
@@ -85,6 +85,16 @@ flowchart TD
 
 💡 Stack = safer, Heap = more flexible but dangerous.
 
+⚠️ Common mistakes:
+
+1. Memory leaks
+
+🧪 What to double-check:
+
+* Every new has a matching delete
+* Arrays use delete[]
+* No leaks in error paths
+
 ---
 
 ### ⚙️ CPP02 — Orthodox Canonical Form
@@ -96,6 +106,13 @@ flowchart LR
     A --> D[Copy Assignment Operator]
     A --> E[Destructor]
 ```
+
+⚠️ Common mistakes:
+
+1. Not using the Orthodox Canonical Form
+2. Shallow copy instead of deep copy
+3. Self-assignment bugs
+4. Returning wrong types
 
 ---
 
@@ -122,6 +139,12 @@ classDiagram
 ```
 
 💡 Child classes reuse and extend parent behavior.
+
+⚠️ Common mistakes:
+
+1. Not calling the base constructor explicitly
+2. Re-declaring attributes already in the base class
+3. Using wrong access specifiers (private instead of protected)
 
 ---
 
@@ -163,6 +186,30 @@ sequenceDiagram
 
 💥 This is **runtime polymorphism**
 
+
+⚠️ Common mistakes:
+
+1. Missing virtual destructor
+  If you delete a derived object through a base pointer without a virtual destructor → undefined behavior.
+
+    Base* obj = new Derived();
+    delete obj; //  problem if destructor is not virtual
+
+    -> How to fix it
+   virtual ~Base();
+
+3. Shallow copy in complex objects
+    If your class contains pointers:
+
+    Copy constructor must duplicate the data (deep copy)
+    Not just copy the pointer
+
+4. Wrong polymorphism
+    Evaluators will check:
+
+    * Are functions truly overridden?
+    * Are you using virtual correctly?
+    * Does behavior change at runtime
 ---
 
 ## ⚙️ Compilation
@@ -183,12 +230,3 @@ valgrind --leak-check=full ./program
 
 ---
 
-## ❗ Common Pitfalls
-
-* Forgetting Orthodox Canonical Form
-* Forgetting to add the flag -std=c++98
-* Memory leaks (instant fail)
-* Missing `virtual` destructor
-* Object slicing in inheritance
-
----
