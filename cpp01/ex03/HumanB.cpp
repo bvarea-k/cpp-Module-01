@@ -6,7 +6,7 @@
 /*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 16:46:43 by bvarea-k          #+#    #+#             */
-/*   Updated: 2025/11/21 16:56:47 by bvarea-k         ###   ########.fr       */
+/*   Updated: 2025/12/03 09:11:12 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 HumanB::HumanB(std::string name) {
 	_name = name;
 	_weapon = NULL;
+	std::cout << "HumanB " << _name << " created." << std::endl;
 }
 
 HumanB::~HumanB() {

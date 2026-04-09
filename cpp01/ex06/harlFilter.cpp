@@ -6,7 +6,7 @@
 /*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 13:17:13 by bvarea-k          #+#    #+#             */
-/*   Updated: 2025/12/02 12:17:57 by bvarea-k         ###   ########.fr       */
+/*   Updated: 2025/12/03 10:04:19 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,16 @@ void Harl::complainFilter(std::string level) {
 	switch (levelIndex) {
 		case 0:
 			this->debug();
+			std::cout << std::endl;
 		case 1:
 			this->info();
+			std::cout << std::endl;
 		case 2:
 			this->warning();
+			std::cout << std::endl;
 		case 3:
 			this->error();
+			std::cout << std::endl;
 			break;
 
 	default:

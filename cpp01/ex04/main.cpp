@@ -6,7 +6,7 @@
 /*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 09:28:19 by bvarea-k          #+#    #+#             */
-/*   Updated: 2025/12/02 12:15:25 by bvarea-k         ###   ########.fr       */
+/*   Updated: 2025/12/03 09:53:26 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@ std::string	myReplace(const std::string &line,
 	size_t		pos = 0;
 	size_t		found = line.find(s1, pos);
 
-	while (found != std::string::npos) { /*Mientras se haya encontrado s1*/
+	while (found != std::string::npos) {
 		result.append(line, pos, found - pos);
 		result.append(s2);
 		pos = found + s1.length();
 		found = line.find(s1, pos);
 	}
-	result.append(line, pos, std::string::npos); //takes all the char until the end of the string.
+	result.append(line, pos, std::string::npos);
 	return (result);
 }
 
@@ -61,7 +61,8 @@ int	main(int ac, char **av)
 	std::string line;
 	while (std::getline(in, line)) {
 		out << myReplace(line, s1, s2);
-		if (!in.eof()) out << std::endl; /*if it's not the EOF, /n.*/
+		if (!in.eof())
+			out << std::endl;
 	}
 
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 12:37:57 by bvarea-k          #+#    #+#             */
-/*   Updated: 2025/11/20 10:08:00 by bvarea-k         ###   ########.fr       */
+/*   Updated: 2025/11/26 10:01:08 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 class PhoneBook {
 private:
 	Contact	contacts[8];
-	int		nextIndex; //index where next contact is added
-	int		count; //num of added contacts
+	int		nextIndex; /*index where next contact is added*/
+	int		count; /*num of added contacts*/
 
 public:
  	PhoneBook();

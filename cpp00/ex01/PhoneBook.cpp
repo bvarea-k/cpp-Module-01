@@ -6,7 +6,7 @@
 /*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 12:01:52 by bvarea-k          #+#    #+#             */
-/*   Updated: 2025/11/27 11:40:33 by bvarea-k         ###   ########.fr       */
+/*   Updated: 2025/11/26 10:00:27 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,6 @@ void PhoneBook::printContact(int index) const {
 	std::cout << "Phone Number: " << c.getPhoneNum() << std::endl;
 	std::cout << "Darkest Secret: " << c.getSecret() << std::endl;
 }
-
-/*It shows prompts that request info and saves it in input*/
 
 bool PhoneBook::addContact() {
 	std::string	input;
@@ -182,10 +180,10 @@ bool PhoneBook::searchContacts()
 {
 	if (count == 0) {
 		std::cout << "PhoneBook is empty." << std::endl;
-		return true;
+		return false;
 	}
 
-	std::cout << std::setw(10) << "Index" << "|"		//To create the table
+	std::cout << std::setw(10) << "Index" << "|"
 			<< std::setw(10) << "First Name" << "|"
 			<< std::setw(10) << "Last Name" << "|"
 			<< std::setw(10) << "Nickname";
@@ -194,12 +192,12 @@ bool PhoneBook::searchContacts()
 	for (int i = 0; i < count; i++) {
 		std::cout << std::setw(10) << i << "|";
 
-		std::string fn = contacts[i].getFirstName();	//I declare variables and get the info with getters
+		std::string fn = contacts[i].getFirstName();
 		std::string ln = contacts[i].getLastName();
 		std::string nn = contacts[i].getNickName();
 
 		if (fn.size() > 10)
-			fn = fn.substr(0, 9) + ".";					//creates a 9 char copy and adds full stop
+			fn = fn.substr(0, 9) + ".";
 		if (ln.size() > 10)
 			ln = ln.substr(0, 9) + ".";
 		if (nn.size() > 10)
@@ -212,12 +210,12 @@ bool PhoneBook::searchContacts()
 	}
 
 	std::string input;
-	int index = -1;										//Index that the user will check
+	int index = -1;
 	std::cout << "Enter index of contact to display: ";
 	if (!std::getline(std::cin, input))
 		return false;
 
-	std::stringstream ss(input);						//stringstream allows to read a string as if it was str::cin
+	std::stringstream ss(input);
 	ss >> index;
 
 	if (ss.fail()) {

@@ -48,6 +48,3 @@ int main(int argc, char **argv)
 	std::cout << std::endl;
 	return (0);
 }
-
-// static_cast<char> safer than simply casting.
-//Must cast to char cause toupper returns an int.

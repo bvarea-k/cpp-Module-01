@@ -6,7 +6,7 @@
 /*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 09:22:28 by bvarea-k          #+#    #+#             */
-/*   Updated: 2025/11/27 11:46:57 by bvarea-k         ###   ########.fr       */
+/*   Updated: 2025/11/26 10:03:34 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,21 +43,13 @@ Account::~Account()
 			<< ";closed" << std::endl;
 }
 
-//It shows current time
-
-/*void	Account::_displayTimestamp( void ) {
-	time_t currentTime = time(NULL);
+void	Account::_displayTimestamp( void ) {
+	time_t currentTime = time(NULL);			//time_t saves time in seconds. time(NULL) returns curr time in s since 1 January 1970
 	struct tm *timeInfo = localtime(&currentTime);
 	char buffer[16];
 
-	strftime(buffer, sizeof(buffer), "%Y%m%d_%H%M%S", timeInfo);
+	strftime(buffer, sizeof(buffer), "%Y%m%d_%H%M%S", timeInfo); //strftime transforms tm into string
 	std::cout << "[" << buffer << "] ";
-}*/
-
-//It shows the .log time
-
-void	Account::_displayTimestamp( void ) {
-	std::cout << "[19920104_091532] ";
 }
 
 int	Account::getNbAccounts( void ){
